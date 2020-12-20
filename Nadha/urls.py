@@ -8,5 +8,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('about/', views.about),
     path('product/', ebn.product),
-    path('json-test/', views.jsontest)
+    path('json-test/', views.jsontest),
+    path('product-detail/<slug:idProduct>/', views.readget)
 ]
