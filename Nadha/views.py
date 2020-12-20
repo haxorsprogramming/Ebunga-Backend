@@ -7,7 +7,7 @@ from django.core import serializers
 import mysql.connector
 import json
 
-mydb = mysql.connector.connect(host='localhost', user='root', password='', database='dbs_ebunga_front_end')
+mydb = mysql.connector.connect(host='localhost', user='root', password='', database='dbs_test_django')
 
 def test_koneksi(request):
 

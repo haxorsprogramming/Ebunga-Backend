@@ -11,5 +11,6 @@ urlpatterns = [
     path('product/', ebn.product),
     path('json-test/', views.jsontest),
     path('product-detail/<slug:idProduct>/', views.readget),
-    path('test-mysql/', views.test_koneksi)
+    path('test-mysql/', views.test_koneksi),
+    path('add-siswa/', r_siswa.add_siswa)
 ]
