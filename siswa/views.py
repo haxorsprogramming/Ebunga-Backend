@@ -7,13 +7,19 @@ from django.core import serializers
 import mysql.connector
 import json
 
-mydb = mysql.connector.connect(host='localhost', user='root', password='', database='dbs_test_django')
+h = 'localhost'
+u = 'root'
+p = ''
+d = 'dbs_test_django'
+
+mydb = mysql.connector.connect(host=h, user=u, password=p, database=d)
 mycursor = mydb.cursor()
+
 # Create your views here.
 @csrf_exempt
 def add_siswa(request):
     if request.method == 'GET':
-        return HttpResponse("ini get")
+        return HttpResponse("<pre>Method not allowed .. ")
     elif request.method == 'POST':
         nama = request.POST.get("nama")
         kelas = request.POST.get("kelas")
