@@ -2,7 +2,31 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.http import JsonResponse
+from django.core import serializers
 
+import mysql.connector
+import json
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="root",
+  password="",
+  database="dbs_test_django"
+)
+
+def test_koneksi(request):
+
+    mycursor = mydb.cursor()
+    mycursor.execute("SELECT * FROM tbl_siswa")
+    myresult = mycursor.fetchall()
+    rowarray_list = []
+
+    for row in myresult:
+        h = (row[0], row[1], row[2])
+        rowarray_list.append(h)
+
+    # return HttpResponse(j)
+    return JsonResponse(myresult, safe=False)
 
 def about(request):
     return render(request, "about.html")
