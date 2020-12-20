@@ -7,22 +7,17 @@ from django.core import serializers
 import mysql.connector
 import json
 
-mydb = mysql.connector.connect(
-  host="localhost",
-  user="root",
-  password="",
-  database="dbs_test_django"
-)
+mydb = mysql.connector.connect(host='localhost', user='root', password='', database='dbs_ebunga_front_end')
 
 def test_koneksi(request):
 
     mycursor = mydb.cursor()
-    mycursor.execute("SELECT * FROM tbl_siswa")
+    mycursor.execute("SELECT * FROM tbl_provinsi")
     myresult = mycursor.fetchall()
     rowarray_list = []
 
     for row in myresult:
-        h = (row[0], row[1], row[2])
+        h = (row[0], row[1])
         rowarray_list.append(h)
 
     # return HttpResponse(j)

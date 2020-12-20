@@ -3,6 +3,7 @@ from django.urls import path
 
 from . import views
 from ebungabn import views as ebn
+from siswa import views as r_siswa
 
 urlpatterns = [
     path('admin/', admin.site.urls),
